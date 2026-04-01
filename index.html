@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практическое задание 10</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Практическое задание 10</p>
+        <h1>Форма обратной связи с валидацией</h1>
+        <p class="hero__lead">
+          Небольшой учебный проект с обработкой событий, проверкой полей и
+          выводом данных в консоль.
+        </p>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="card">
+        <h2>Обратная связь</h2>
+        <p class="card__text">
+          Заполните обязательные поля. После успешной проверки данные будут
+          выведены в консоль браузера.
+        </p>
+
+        <form id="feedbackForm" novalidate>
+          <div class="field">
+            <label for="fullname">ФИО *</label>
+            <input
+              class="input"
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Иванов Иван"
+            />
+            <p class="hint">Минимум два слова.</p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон *</label>
+            <input
+              class="input"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+7 (999) 123-45-67"
+            />
+            <p class="hint">Введите не менее 10 цифр.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@mail.ru"
+            />
+            <p class="hint">Используется базовая проверка формата email.</p>
+          </div>
+
+          <div class="field">
+            <label for="message">Сообщение</label>
+            <textarea
+              class="textarea"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Напишите сообщение"
+            ></textarea>
+            <p class="hint">Не более 500 символов.</p>
+          </div>
+
+          <div class="checkbox-field">
+            <input type="checkbox" id="agreement" name="agreement" />
+            <label for="agreement">
+              Я согласен на обработку персональных данных *
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="button button--primary" type="submit">
+              Отправить
+            </button>
+            <button class="button button--secondary" type="reset">
+              Очистить
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/consoleLogger.js"></script>
+  </body>
+</html>
